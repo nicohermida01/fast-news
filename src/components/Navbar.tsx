@@ -58,6 +58,11 @@ const StyledLink = styled(Link)`
 	font-size: 14px;
 	font-weight: bold;
 	padding: 16px 32px;
+	transition: background-color ease 0.4s;
 
-	${props => props.$pageActive && `border-bottom: 2px solid ${colors.PRIMARY}`}
+	${props => props.$pageActive && `border-bottom: 2px solid ${colors.PRIMARY}`};
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
 `
