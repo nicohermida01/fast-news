@@ -4,7 +4,7 @@ import { INewsResponse, getNews } from '@/services/news'
 export default function Home(props: IHomePageProps) {
 	return (
 		<div>
-			<h1>Hello world</h1>
+			<h1>HomePage</h1>
 		</div>
 	)
 }

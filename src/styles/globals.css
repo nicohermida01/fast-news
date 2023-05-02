@@ -6,9 +6,21 @@
 
 :root {
 	font-size: 16px;
+
+	--bacground-white-color: #efefef;
 }
 
 body {
 	width: 100vw;
 	min-height: 100vh;
+	background-color: var(--bacground-white-color);
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
