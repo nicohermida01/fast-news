@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Roboto } from 'next/font/google'
+import NextNProgress from 'nextjs-progressbar'
 
 import { PageLayout } from '@/components/PageLayout'
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<Head>
 				<title>Fast News</title>
 			</Head>
+			<NextNProgress />
 			<Component {...pageProps} />
 		</PageLayout>
 	)
