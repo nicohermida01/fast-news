@@ -45,6 +45,7 @@ const Container = styled.div`
 const NavbarWrapper = styled.nav`
 	width: 100%;
 	max-width: ${constants.APP_MAX_WIDTH}px;
+	margin: 0 auto;
 	padding: 0 32px;
 `
 

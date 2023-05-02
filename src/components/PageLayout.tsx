@@ -22,5 +22,6 @@ export function PageLayout({ children }: IPageLayoutProps) {
 const PageContainer = styled.main`
 	width: 100%;
 	max-width: ${constants.APP_MAX_WIDTH}px;
+	margin: 0 auto;
 	padding: 32px;
 `
