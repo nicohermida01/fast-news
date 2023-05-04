@@ -1,11 +1,15 @@
 export interface IArticle {
-	author: string
 	title: string
 	description: string
-	source: string
-	image: string
-	category: string
-	country: string
+	link: string
+	content: string
+	creator: string
+	image_url: string
+	video_url: string
+	pubDate: Date
+
 	language: string
-	published_at: Date | string
+	category: string[]
+	country: string[]
+	keywords: string[]
 }

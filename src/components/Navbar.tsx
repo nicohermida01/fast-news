@@ -10,7 +10,7 @@ import { colors } from '@/ssot/colors'
 export function Navbar() {
 	const router = useRouter()
 	const categoryActive =
-		router.pathname === '/' ? categories.GENERAL : router.query.category
+		router.pathname === '/' ? categories.LATEST : router.query.category
 
 	return (
 		<Container>
@@ -18,7 +18,7 @@ export function Navbar() {
 				<NavOptions>
 					{categoriesIterable.map((category, index) => {
 						const hrefUrl =
-							category === categories.GENERAL ? '/' : `/categories/${category}`
+							category === categories.LATEST ? '/' : `/categories/${category}`
 
 						return (
 							<li key={index}>
@@ -46,11 +46,26 @@ const NavbarWrapper = styled.nav`
 	width: 100%;
 	max-width: ${constants.APP_MAX_WIDTH}px;
 	margin: 0 auto;
-	padding: 0 32px;
 `
 
 const NavOptions = styled.ul`
 	display: flex;
+	max-width: 100%;
+	overflow-x: scroll;
+	transition: all ease 0.4s;
+
+	&::-webkit-scrollbar {
+		height: 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.2);
+		border-radius: 8px;
+	}
+
+	&:hover::-webkit-scrollbar {
+		height: 8px;
+	}
 `
 
 const StyledLink = styled(Link)`

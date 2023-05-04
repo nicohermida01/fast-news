@@ -8,10 +8,12 @@
 	font-size: 16px;
 
 	--bacground-white-color: #efefef;
+	--primary-color: #2196f3;
 }
 
 body {
 	width: 100vw;
+	overflow-x: hidden;
 	min-height: 100vh;
 	background-color: var(--bacground-white-color);
 }
@@ -23,4 +25,18 @@ ul {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+body::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.4);
 }

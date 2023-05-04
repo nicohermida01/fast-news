@@ -1,12 +1,17 @@
 export const categories = {
-	GENERAL: 'general',
+	LATEST: 'latest',
 	BUSINESS: 'business',
 	ENTERTAINMENT: 'entertainment',
+	ENVIRONMENT: 'environment',
+	FOOD: 'food',
 	HEALTH: 'health',
+	POLITICS: 'politics',
 	SCIENCE: 'science',
 	SPORTS: 'sports',
 	TECHNOLOGY: 'technology',
-	ARGENTINA: 'argentina',
+	TOP: 'top',
+	TOURISM: 'tourism',
+	WORLD: 'world',
 }
 
 export const categoriesIterable = Object.values(categories)
