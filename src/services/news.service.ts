@@ -8,11 +8,12 @@ export interface INewsResponse {
 	nextPage: string
 }
 
-export const getNews = async (): Promise<INewsResponse> => {
+export const getNews = async (category?: string): Promise<INewsResponse> => {
 	const response = await axios.get('https://newsdata.io/api/1/news', {
 		params: {
 			apikey: process.env.NEWSDATA_API_KEY,
 			country: 'us',
+			...(category ? { category: category } : {}),
 		},
 	})
 
