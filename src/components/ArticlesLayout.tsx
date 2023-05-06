@@ -15,6 +15,8 @@ export function ArticlesLayout({ articles }: IArticlesLayoutProps) {
 					title={articles[0].title}
 					description={articles[0].description}
 					imageUrl={articles[0].image_url}
+					publishDate={articles[0].pubDate}
+					categories={articles[0].category}
 					large
 				/>
 				<ArticlesGrid>
@@ -26,6 +28,8 @@ export function ArticlesLayout({ articles }: IArticlesLayoutProps) {
 									title={art.title}
 									description={art.description}
 									imageUrl={art.image_url}
+									publishDate={art.pubDate}
+									categories={art.category}
 								/>
 							)
 					})}

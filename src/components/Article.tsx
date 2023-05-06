@@ -1,10 +1,15 @@
+import { formatDistanceStrict } from 'date-fns'
 import Image from 'next/image'
 import styled from 'styled-components'
+
+import { ClockIcon } from './icons/ClockIcon'
 
 interface IArticleProps {
 	title: string
 	imageUrl: string
 	description: string
+	publishDate: Date | string
+	categories: string[]
 	large?: boolean
 }
 
@@ -12,6 +17,8 @@ export function Article({
 	title,
 	imageUrl,
 	description,
+	publishDate,
+	categories,
 	large,
 }: IArticleProps) {
 	return (
@@ -19,8 +26,22 @@ export function Article({
 			<ImageWrapper $large={large}>
 				<Image width={1920} height={1080} src={imageUrl} alt={title} />
 			</ImageWrapper>
+
 			<Content $large={large}>
 				<Title $large={large}>{title}</Title>
+
+				<Deatils>
+					<ClockIcon width={20} />
+					{formatDistanceStrict(new Date(publishDate), new Date(), {
+						addSuffix: true,
+					})}
+					<Categories>
+						{categories.map((category, index) => (
+							<span key={index}>{category}</span>
+						))}
+					</Categories>
+				</Deatils>
+
 				<Description>{description}</Description>
 			</Content>
 		</Container>
@@ -52,11 +73,31 @@ const Content = styled.div`
 
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
 `
 
 const Title = styled.h3`
 	font-size: ${props => (props.$large ? '32px' : '16px')};
+`
+
+const Deatils = styled.div`
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.5);
+	gap: 4px;
+	margin: 8px 0 16px 0;
+`
+
+const Categories = styled.div`
+	display: flex;
+	align-items: center;
+	border-left: 2px solid rgba(0, 0, 0, 0.5);
+	padding-left: 4px;
+
+	& span {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 `
 
 const Description = styled.p`
