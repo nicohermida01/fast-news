@@ -9,7 +9,7 @@ interface IArticleProps {
 	imageUrl: string
 	description: string
 	publishDate: Date | string
-	categories: string[]
+	category: string
 	large?: boolean
 }
 
@@ -18,7 +18,7 @@ export function Article({
 	imageUrl,
 	description,
 	publishDate,
-	categories,
+	category,
 	large,
 }: IArticleProps) {
 	return (
@@ -36,9 +36,7 @@ export function Article({
 						addSuffix: true,
 					})}
 					<Categories>
-						{categories.map((category, index) => (
-							<span key={index}>{category}</span>
-						))}
+						<span>{category}</span>
 					</Categories>
 				</Deatils>
 
