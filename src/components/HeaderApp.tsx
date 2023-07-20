@@ -5,7 +5,7 @@ import { constants } from '@/constants'
 import { AppLogo } from './icons/AppLogo'
 import { colors } from '@/ssot/colors'
 import { UserIcon } from './icons/UserIcon'
-import { SearchIcon } from './icons/SearchIcon'
+import { SearchBox } from './SearchBox'
 
 export function HeaderApp() {
 	return (
@@ -14,10 +14,7 @@ export function HeaderApp() {
 				<AppLogo width={60} height={40} />
 
 				<ContainerFlex>
-					<SearchBox>
-						<SearchIcon />
-						<SearchInput type='search' placeholder='Bitcoin, Covid ...' />
-					</SearchBox>
+					<SearchBox />
 					<LoginButton href={'#'}>
 						<UserIcon width={16} height={16} />
 						log in
@@ -48,40 +45,6 @@ const ContainerFlex = styled.div`
 	display: flex;
 	gap: 32px;
 	align-items: center;
-`
-
-const SearchBox = styled.div`
-	width: 250px;
-	position: relative;
-
-	& svg {
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		top: calc(50% - 10px);
-		left: 16px;
-		fill: rgba(0, 0, 0, 0.5);
-	}
-`
-
-const SearchInput = styled.input`
-	width: 100%;
-	border: none;
-	background-color: rgba(0, 0, 0, 0.05);
-	font-size: 12px;
-	padding: 8px 16px;
-	padding-left: calc(16px + 20px + 4px);
-	border-radius: 16px;
-	transition: all ease 0.4s;
-
-	&:focus {
-		outline: none;
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-
-	&:hover {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
 `
 
 const LoginButton = styled(Link)`
